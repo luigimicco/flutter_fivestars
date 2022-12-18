@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             RateStars(
                 stars: stars,
                 size: 36.0,
+                maxStars: 10,
                 onPressed: (value) {
                   setState(() {
                     stars = value;
