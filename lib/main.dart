@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './fivestars.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int stars = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +42,17 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Put here your widget',
+          children: <Widget>[
+            const Text(
+              'Rate this app:',
             ),
+            FiveStars(
+                stars: stars,
+                onPressed: (value) {
+                  setState(() {
+                    stars = value;
+                  });
+                })
           ],
         ),
       ),
