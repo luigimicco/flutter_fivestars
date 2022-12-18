@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter demo custom widget'),
     );
   }
 }
@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             FiveStars(
                 stars: stars,
+                size: 36.0,
                 onPressed: (value) {
                   setState(() {
                     stars = value;
