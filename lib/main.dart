@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './fivestars.dart';
+import 'ratestars.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'Rate this app:',
             ),
-            FiveStars(
+            RateStars(
                 stars: stars,
                 size: 36.0,
                 onPressed: (value) {

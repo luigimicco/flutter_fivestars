@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class FiveStars extends StatefulWidget {
+class RateStars extends StatefulWidget {
   final int stars;
   final Function(int value) onPressed;
   final double? size;
-  const FiveStars(
+  const RateStars(
       {required this.onPressed, this.stars = 0, this.size, super.key});
 
   @override
-  State<FiveStars> createState() => _FiveStarsState();
+  State<RateStars> createState() => _RateStarsState();
 }
 
-class _FiveStarsState extends State<FiveStars> {
+class _RateStarsState extends State<RateStars> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,14 +19,14 @@ class _FiveStarsState extends State<FiveStars> {
       children: List.generate(5, (index) {
         return InkWell(
           customBorder: const CircleBorder(),
-          child: getStar(index),
+          child: _getStar(index),
           onTap: () => widget.onPressed(index),
         );
       }),
     );
   }
 
-  Icon getStar(int pos) {
+  Icon _getStar(int pos) {
     IconData icon = Icons.star;
     Color color = Colors.orange;
 
