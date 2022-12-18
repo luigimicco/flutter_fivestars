@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FiveStars extends StatefulWidget {
   final int stars;
-  final Function onPressed;
+  final Function(int value) onPressed;
   const FiveStars({required this.onPressed, this.stars = 0, super.key});
 
   @override
