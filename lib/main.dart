@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int stars = 0;
+  int currentRate = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
               'Rate this app:',
             ),
             RateStars(
-                stars: stars,
+                stars: currentRate,
                 size: 36.0,
-                maxStars: 5,
+                maxRate: 5,
                 onPressed: (value) {
                   setState(() {
-                    stars = value;
+                    currentRate = value;
                   });
                 })
           ],

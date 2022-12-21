@@ -4,29 +4,29 @@ class RateStars extends StatelessWidget {
   final int stars;
   final Function(int value) onPressed;
   final double? size;
-  final int maxStars;
+  final int maxRate;
   const RateStars(
       {required this.onPressed,
       this.stars = 0,
       this.size,
-      this.maxStars = 5,
+      this.maxRate = 5,
       super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: List.generate(maxStars, (index) {
+      children: List.generate(maxRate, (index) {
         return InkWell(
           customBorder: const CircleBorder(),
-          child: _getStar(index, size),
+          child: _getIcon(index, size),
           onTap: () => onPressed(index),
         );
       }),
     );
   }
 
-  Icon _getStar(int value, double? sizeIcon) {
+  Icon _getIcon(int value, double? sizeIcon) {
     IconData icon = Icons.star;
     Color color = Colors.orange;
 
