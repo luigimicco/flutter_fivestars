@@ -20,7 +20,7 @@ class RateStars extends StatelessWidget {
         return InkWell(
           customBorder: const CircleBorder(),
           child: _getIcon(index, size),
-          onTap: () => onPressed(index),
+          onTap: () => onPressed(index + 1),
         );
       }),
     );
@@ -30,7 +30,7 @@ class RateStars extends StatelessWidget {
     IconData icon = Icons.star;
     Color color = Colors.orange;
 
-    if (value > stars) {
+    if (value >= stars) {
       icon = Icons.star_border;
       color = Colors.grey;
     }
